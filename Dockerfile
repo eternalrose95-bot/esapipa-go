@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
     libwebp-dev \
     libzip-dev \
     zlib1g-dev \
+    nodejs \
+    npm \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) pdo pdo_mysql gd zip \
     && rm -rf /var/lib/apt/lists/*
