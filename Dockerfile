@@ -32,5 +32,7 @@ RUN npm install && npm audit fix || true
 # build assets for production
 RUN npm run build
 
+ENV APP_ENV=production
+
 # run app
-CMD ["sh", "-c", "php artisan storage:link && sleep 20 && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT"]
+CMD ["sh", "-c", "php artisan config:clear && php artisan view:clear && php artisan storage:link && sleep 20 && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT"]
