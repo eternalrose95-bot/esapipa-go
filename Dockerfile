@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zlib1g-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
-    && docker-php-ext-install -j$(nproc) pdo pdo_mysql gd \
+    && docker-php-ext-install -j$(nproc) pdo pdo_mysql gd zip \
     && rm -rf /var/lib/apt/lists/*
 
 # install composer
