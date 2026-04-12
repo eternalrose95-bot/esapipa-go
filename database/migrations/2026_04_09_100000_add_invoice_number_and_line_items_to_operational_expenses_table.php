@@ -1,0 +1,24 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('operational_expenses', function (Blueprint $table) {
+            $table->string('invoice_number')->unique()->after('id');
+            $table->json('line_items')->nullable()->after('store_name');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('operational_expenses', function (Blueprint $table) {
+            $table->dropUnique(['invoice_number']);
+            $table->dropColumn(['invoice_number', 'line_items']);
+        });
+    }
+};

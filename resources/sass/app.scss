@@ -1,0 +1,85 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Custom
+@import "custom";
+
+.bg-inv-primary {
+    background-color: #679ff2;
+}
+
+.text-orange {
+    color: rgb(0, 38, 255);
+}
+
+.bg-inv-secondary {
+    background-color: #1e1e2c;
+    color: #679ff2;
+    .text-muted {
+        color: darken($color: #679ff2, $amount: 20%) !important;
+    }
+    .nav-item {
+        color: lighten($color: #1e1e2c, $amount: 40%) !important;
+        :hover {
+            color: white !important;
+        }
+        .active {
+            color: white !important;
+        }
+    }
+    .nav-link.active {
+        background-color: #6775f277 !important;
+        border-radius: 0;
+    }
+}
+.text-inv-primary {
+    color: #679ff2;
+}
+
+.text-inv-secondary {
+    color: #1e1e2c;
+}
+
+.border-inv-primary {
+    border-color: #679ff2;
+}
+
+body {
+    font-family: "Lexend", serif !important;
+}
+
+.text-cash-green {
+    color: #158a0c;
+}
+.text-cash-red {
+    color: #ae0c00;
+}
+.btn-inv-primary {
+    color: #679ff2 ;
+    background-color: #ae0c00 ;
+    :hover {
+        color: white !important;
+        background-color: #ae0c00 !important;
+    }
+    :focus {
+        color: white !important;
+        background-color: #ae0c00 !important;
+    }
+    :active {
+        color: white !important;
+        background-color: #ae0c00 !important;
+    }
+    :active {
+        color: white !important;
+        background-color: #6c6c6c !important;
+    }
+
+
+}
