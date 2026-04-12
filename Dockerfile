@@ -29,5 +29,8 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 # install Node dependencies and automatically fix npm audit issues
 RUN npm install && npm audit fix || true
 
+# build assets for production
+RUN npm run build
+
 # run app
 CMD ["sh", "-c", "php artisan storage:link && sleep 20 && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT"]
